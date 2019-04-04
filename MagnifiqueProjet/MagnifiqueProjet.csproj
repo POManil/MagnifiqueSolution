@@ -97,5 +97,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\9_WPF_MVVM\WPF - MVVM\Demo\GestContacts\ToolBox\ToolBox.csproj">
+      <Project>{708CBDBB-D9F1-4EB3-84BB-827F156A6CEE}</Project>
+      <Name>ToolBox</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
