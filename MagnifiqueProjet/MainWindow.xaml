@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MagnifiqueProjet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="450" Width="717.134">
+    <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Nom" Binding="{Binding Nom}" Width="*" />
+            <DataGridTextColumn Header="Prenom" Binding="{Binding Prenom}" Width="*" />
+            <DataGridTextColumn Header="Identifiant" Binding="{Binding Id}" Width="*"/>
+        </DataGrid.Columns>
+    </DataGrid>
 </Window>
