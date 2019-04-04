@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ToolBox.ADO.Database;
+using ToolBox.ADO.Mapper;
 
 namespace Services
 {
@@ -17,9 +18,10 @@ namespace Services
             conn = new Connection(@"Data Source=FORMA203\TFTIC;Initial Catalog=AdventureWorks2008R2;User ID=sa;Password=tftic@2012;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False", "System.Data.SqlClient");
         }
 
-        public Person GetAll()
+        public IEnumerable<Person> GetAll()
         {
-
+            Command cmd = new Command("select BusinessEntityID, LastName, FirstName from Person.Person");
+            return conn.ExecuteReader(cmd, ReaderToEntityMapper.ReaderTo<Person>);
         }
     }
 }
